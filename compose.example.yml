@@ -1,0 +1,15 @@
+services:
+  docudocker:
+    build: .
+    image: docudocker-webapp:01.00.00
+    ports:
+      - "8080:8080"
+    environment:
+      DOCUDOCKER_DOCKER_MODE: socket
+      DOCUDOCKER_DOCKER_SOCKET_PATH: /var/run/docker.sock
+      DOCUDOCKER_BASIC_AUTH_USER: admin
+      DOCUDOCKER_BASIC_AUTH_PASSWORD: change-me
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    group_add:
+      - "${DOCKER_GID:-998}"

@@ -1,0 +1,2 @@
+$ .venv_dev/bin/mypy app scripts
+Success: no issues found in 9 source files

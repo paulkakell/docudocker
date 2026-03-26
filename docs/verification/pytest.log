@@ -1,0 +1,9 @@
+$ .venv_dev/bin/pytest
+.................                                                        [100%]
+=============================== warnings summary ===============================
+.venv_dev/lib/python3.13/site-packages/starlette/formparsers.py:12
+  /mnt/data/docudocker-webapp/.venv_dev/lib/python3.13/site-packages/starlette/formparsers.py:12: PendingDeprecationWarning: Please use `import python_multipart` instead.
+    import multipart
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+17 passed, 1 warning in 1.49s

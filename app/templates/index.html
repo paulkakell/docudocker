@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DocuDocker Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Docker infrastructure documentation</p>
+          <h1>DocuDocker Web App</h1>
+          <p class="subtitle">
+            Live inventory for containers, resources, published ports, and mounted paths.
+          </p>
+        </div>
+        <section class="status-card" aria-label="Application status">
+          <div>
+            <span class="label">Version</span>
+            <strong id="app-version">{{ version }}</strong>
+          </div>
+          <div>
+            <span class="label">Last updated</span>
+            <strong id="updated-at">Not loaded</strong>
+          </div>
+        </section>
+      </header>
+
+      <nav class="tab-strip" aria-label="Documentation tabs">
+        <button class="tab-button is-active" data-tab="overview" type="button">Overview</button>
+        <button class="tab-button" data-tab="resources" type="button">Resources</button>
+        <button class="tab-button" data-tab="ports" type="button">Ports</button>
+        <button class="tab-button" data-tab="mounts" type="button">Mounts</button>
+      </nav>
+
+      <main class="panel">
+        <div class="panel-toolbar">
+          <div>
+            <h2 id="tab-title">Overview</h2>
+            <p id="tab-description">One line per container with state, health, image, release, and uptime.</p>
+          </div>
+          <button id="refresh-button" class="secondary-button" type="button">Refresh current tab</button>
+        </div>
+
+        <div id="message-banner" class="message-banner is-hidden" role="status"></div>
+        <div id="filters" class="filter-grid" aria-label="Column filters"></div>
+
+        <div class="table-meta">
+          <span id="row-count">0 rows</span>
+        </div>
+
+        <div class="table-wrap">
+          <table id="data-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </main>
+
+      <footer class="page-footer">
+        <span>Running version {{ version }}</span>
+        <a href="{{ github_url }}" target="_blank" rel="noopener noreferrer">GitHub repository</a>
+      </footer>
+    </div>
+    <script src="{{ url_for('static', path='app.js') }}" defer></script>
+  </body>
+</html>

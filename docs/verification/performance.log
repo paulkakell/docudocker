@@ -1,0 +1,5 @@
+$ .venv_dev/bin/python scripts/performance_check.py
+get_overview_rows: mean=0.89 ms runs=[0.97, 0.78, 1.08, 0.95, 0.67]
+get_resource_rows: mean=0.84 ms runs=[1.06, 0.82, 0.77, 0.79, 0.77]
+get_port_rows: mean=0.18 ms runs=[0.23, 0.17, 0.18, 0.16, 0.18]
+get_mount_rows: mean=0.07 ms runs=[0.09, 0.07, 0.07, 0.07, 0.07]

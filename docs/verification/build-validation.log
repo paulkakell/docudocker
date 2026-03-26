@@ -1,0 +1,8 @@
+$ .venv_build/bin/pip check
+No broken requirements found.
+
+$ PYTHONPATH=. .venv_build/bin/python -c "from app.main import app; print(app.title)"
+DocuDocker Web App
+
+$ start uvicorn and query /healthz
+{"status":"ok","version":"01.00.00"}
